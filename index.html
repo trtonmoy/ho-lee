@@ -8,6 +8,8 @@
     <meta name="robots" content="max-image-preview:large" />
     <link rel="canonical" href="https://nomeme.club/" />
 
+    <link rel="stylesheet" href="./snow.css" />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -913,6 +915,23 @@
     data-rsssl="1"
     class="home page-template page-template-elementor_canvas page page-id-7 wp-custom-logo elementor-default elementor-template-canvas elementor-kit-5 elementor-page elementor-page-7"
   >
+  <!-- Remember to also copy the code in the CSS area! -->
+<div class="snowflakes">
+  <!-- add your 'snowflake' images below - you can add more or less if needed -->
+  <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+  <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+   <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+  <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+  <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+    <div class="snowflake"><img src="./images/snow.png" style="width:50px;" /></div>
+</div>
+</div>
     <div
       data-elementor-type="wp-post"
       data-elementor-id="7"
@@ -1185,7 +1204,9 @@
           ></video>
         </div>
         <!-- <div class="elementor-background-overlay"></div> -->
-        <div class="elementor-container elementor-column-gap-default">
+        <div
+          class="elementor-container elementor-column-gap-default a-class snowflakes"
+        >
           <div
             class="elementor-column elementor-col-100 elementor-top-column elementor-element elementor-element-79131d08 column"
             data-id="79131d08"
@@ -1723,6 +1744,7 @@
                   </div>
                 </div>
               </section>
+
               <section
                 class="elementor-section elementor-inner-section elementor-element elementor-element-2189666 elementor-section-full_width elementor-section-height-default elementor-section-height-default"
                 data-id="2189666"
@@ -3116,6 +3138,7 @@
         };
       };
     </script>
+
     <link
       rel="stylesheet"
       id="e-animations-css"
@@ -3368,6 +3391,48 @@
       src="https://nomeme.club/wp-content/plugins/wpforms-lite/assets/js/integrations/elementor/frontend.min.js?ver=1.8.4.1"
       id="wpforms-elementor-js"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.querySelector(".snowfall-container");
+
+        // Create snowflakes
+        for (let i = 0; i < 30; i++) {
+          createSnowflake(container);
+        }
+      });
+
+      function createSnowflake(container) {
+        const snowflake = document.createElement("div");
+        snowflake.className = "snowflake";
+        container.appendChild(snowflake);
+
+        // Set initial position
+        const initialX = Math.random() * window.innerWidth;
+        const initialY = Math.random() * window.innerHeight;
+        snowflake.style.left = initialX + "px";
+        snowflake.style.top = initialY + "px";
+
+        // Animation
+        function snowfall() {
+          const speed = Math.random() * 2 + 1;
+          const translateY = snowflake.offsetTop + speed;
+          const translateX =
+            snowflake.offsetLeft + Math.sin(snowflake.offsetTop / 50) * 2;
+
+          if (translateY > window.innerHeight) {
+            snowflake.style.top = 0;
+            snowflake.style.left = Math.random() * window.innerWidth + "px";
+          } else {
+            snowflake.style.top = translateY + "px";
+            snowflake.style.left = translateX + "px";
+          }
+
+          requestAnimationFrame(snowfall);
+        }
+
+        snowfall();
+      }
+    </script>
   </body>
 </html>
 
