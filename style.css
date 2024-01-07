@@ -1159,7 +1159,7 @@
   }
 }
 .wiggle-image {
-  animation: wiggle 0.3s ease infinite;
+  /* animation: wiggle 0.3s ease infinite; */
 } /* End custom CSS */
 /* Start custom CSS for button, class: .elementor-element-d6d2ffb */
 @keyframes flash {
@@ -1175,7 +1175,7 @@
 }
 
 .flash {
-  animation: flash 1s ease infinite;
+  /* animation: flash 1s ease infinite; */
 }
 
 /* End custom CSS */
@@ -1445,7 +1445,7 @@
 }
 
 .column {
-  animation: shake 2s ease-in-out infinite;
+  /* animation: shake 2s ease-in-out infinite; */
 }
 
 /* End custom CSS */
