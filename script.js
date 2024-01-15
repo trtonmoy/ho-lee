@@ -12,7 +12,15 @@ const currTime = document.querySelector("#currTime");
 const durTime = document.querySelector("#durTime");
 
 // Song titles
-const songs = ["one", "two", "three", "four", "five", "six"];
+const songs = [
+  "Had_a_dream",
+  "5_dora",
+  "Ho_lee_fuk",
+  "pilot",
+  "Ticket_the_moon",
+  "Tale_of_ho_lee",
+  "At_a_loss",
+];
 
 // Keep track of song
 let songIndex = 2;
